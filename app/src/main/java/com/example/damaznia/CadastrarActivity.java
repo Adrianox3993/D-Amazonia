@@ -68,7 +68,7 @@ public class CadastrarActivity extends AppCompatActivity {
         if (pass2.equals("") && pass1.equals("")){
             //txtConfSenha.setBoxStrokeErrorColor(ColorStateList.valueOf(Color.GREEN));
             //Toast.makeText(CadastrarActivity.this, "teste de comparacao 1", Toast.LENGTH_LONG).show();
-            Toast.makeText(CadastrarActivity.this, "Senha não pode KKK ser vazia", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CadastrarActivity.this, "Senha não pode TEAMO ser vazia", Toast.LENGTH_SHORT).show();
         } else if (!pass1.equals(pass2)) {
             //txtConfSenha.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED));
             Toast.makeText(CadastrarActivity.this, "Senha não confere", Toast.LENGTH_SHORT).show();
