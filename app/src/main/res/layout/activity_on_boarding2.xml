@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    tools:context=".OnBoarding2Activity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="282dp"
+        android:layout_height="294dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        app:srcCompat="@drawable/pg_inicial_icon021" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="24dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:background="#D8E5E3" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="24dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="#C97865"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="24dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:background="#D8E5E3"
+            android:text="Button" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Agora você pode escolher seu produto sem sair de casa"
+        android:textColor="#213430"
+        android:textSize="23dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnAnt"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginRight="87dp"
+        android:layout_marginBottom="38dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Aqui você pode escolher os produtos sem correr riscos saindo de casa e podendo agendar horário de busca ou entrega do seu pedido"
+        android:textColor="#62998D"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btnComecar"
+        android:layout_width="108dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/bg_botao"
+        android:drawableEnd="@drawable/seta_direita_icon"
+        android:drawableRight="@drawable/seta_direita_icon"
+        android:fontFamily="@font/open_sans"
+        android:foregroundGravity="right"
+        android:text="Continuar"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textColorHighlight="#478D6C"
+        android:textColorHint="#478D6C"
+        android:textIsSelectable="false"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/btnAnt"
+        android:layout_width="108dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/bg_botao"
+        android:drawableStart="@drawable/seta_esquerda_icon"
+        android:fontFamily="@font/open_sans"
+        android:gravity="center|start"
+        android:paddingLeft="8dp"
+        android:text="Voltar"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="14dp" />
+</RelativeLayout>
