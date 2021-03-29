@@ -52,28 +52,29 @@ public class CadastrarActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 String pass = senha.getText().toString();
-                if (pass.length() > 8)
+                if (pass.length() >= 8)
                 validarSenhaRobusta(pass);
             }
         });
 
     }
 
-    public void validarSenha(View v) {
+    public void validarCamposSenha(View v) {
         senha = findViewById(R.id.idEditSenha);
         senha2 = findViewById(R.id.idEditSenha2);
         String pass1 = senha.getText().toString();
         String pass2 = senha2.getText().toString();
 
-        if (pass2.equals("") && pass1.equals("")){
+        if(pass1.length() <8 || pass2.length() < 8){
+            Toast.makeText(CadastrarActivity.this, "Senha nao pode conter menos de 8 caracteres", Toast.LENGTH_SHORT).show();
+        }
+        else if (pass2.equals("") && pass1.equals("")){
             //txtConfSenha.setBoxStrokeErrorColor(ColorStateList.valueOf(Color.GREEN));
             //Toast.makeText(CadastrarActivity.this, "teste de comparacao 1", Toast.LENGTH_LONG).show();
             Toast.makeText(CadastrarActivity.this, "Senha não pode TEAMO ser vazia", Toast.LENGTH_SHORT).show();
         } else if (!pass1.equals(pass2)) {
             //txtConfSenha.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED));
             Toast.makeText(CadastrarActivity.this, "Senha não confere", Toast.LENGTH_SHORT).show();
-        } else if (pass1.length() <8 || pass2.length() < 8) {
-            Toast.makeText(CadastrarActivity.this, "Senha nao pode conter menos de 8 caracteres", Toast.LENGTH_SHORT).show();
         } else{
             Intent intent = new Intent(getApplicationContext(), EntrarActivity.class);
             startActivityForResult(intent, 0);
