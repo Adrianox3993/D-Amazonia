@@ -59,8 +59,8 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginEnd="18dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/idTxtSenha2"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/progressBar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:passwordToggleEnabled="true"
@@ -78,10 +78,25 @@
                     android:textColor="#213430"
                     android:textColorHint="#213430"
                     android:textSize="16dp" />
-                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progress="0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/idTxtSenha2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTxtSenha2"
+                android:hint="Confirme sua senha"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
@@ -89,7 +104,7 @@
                 android:layout_marginEnd="18dp"
                 android:layout_marginRight="18dp"
                 android:layout_marginBottom="45dp"
-                app:layout_constraintBottom_toTopOf="@+id/button5"
+                app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:passwordToggleEnabled="true"
@@ -99,20 +114,18 @@
                     android:id="@+id/idEditSenha2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_input"
                     android:fontFamily="@font/open_sans_bold"
-                    android:hint="Confirme sua senha"
                     android:inputType="textPassword"
+                    android:background="@drawable/bg_input"
                     android:padding="16dp"
                     android:textColor="#213430"
                     android:textColorHint="#213430"
-                    android:textSize="16dp"
-                    android:visibility="gone" />
+                    android:textSize="16dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btnCadastrar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -120,10 +133,12 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="60dp"
-                android:background="@drawable/bg_botao"
+                android:background="@drawable/botao_estados"
+                android:enabled="false"
                 android:fontFamily="@font/open_sans_bold"
+
+                android:onClick="cadastrar"
                 android:text="Cadastrar"
-                android:onClick="validarSenha"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textColorHint="#D8E5E3"

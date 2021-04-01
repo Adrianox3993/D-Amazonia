@@ -112,7 +112,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="45dp"
-        android:background="@drawable/bg_botao"
+        android:background="@drawable/bg_botao_ativado"
         android:drawableEnd="@drawable/seta_direita_icon"
         android:drawableRight="@drawable/seta_direita_icon"
         android:fontFamily="@font/open_sans"
