@@ -61,7 +61,9 @@ public class CadastrarActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 String pass = senha.getText().toString();
-                    validarSenhaRobusta(pass);
+                String pass2 = senha2.getText().toString();
+                validarSenhaRobusta(pass);
+                validarSenha(pass, pass2);
             }
         });
 
@@ -161,6 +163,7 @@ public class CadastrarActivity extends AppCompatActivity {
         }
         //Se as condições forem verdadeiras, o campo confirmar senha é habilitado
         //senão, o texto da variavel txtCondSenha muda de acordo com a condição não satisfeita
+        //botão Cadastrar é desabilitado caso condições não satisfeitas.
         if (contCharTam && contCharMa && contCharMi && contCharNum && contCharS){
             txtCondSenha.setText(R.string.stringSenhaMForte);
             txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(101, 201, 132)));
@@ -168,27 +171,32 @@ public class CadastrarActivity extends AppCompatActivity {
         }else if (!contCharMa){
             txtCondSenha.setText(R.string.stringCondSenhaMa);
             txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
+            btnCadastrar.setEnabled(false);
             txtConfSenha.setVisibility(View.GONE);
             isValid = false;
         }else if (!contCharMi){
             txtCondSenha.setText(R.string.stringCondSenhaMi);
             txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
             txtConfSenha.setVisibility(View.GONE);
+            btnCadastrar.setEnabled(false);
             isValid = false;
         }else if (!contCharNum){
             txtCondSenha.setText(R.string.stringCondSenhaNum);
             txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
             txtConfSenha.setVisibility(View.GONE);
+            btnCadastrar.setEnabled(false);
             isValid = false;
         }else if (!contCharS){
             txtCondSenha.setText(R.string.stringCondSenhaS);
             txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
             txtConfSenha.setVisibility(View.GONE);
+            btnCadastrar.setEnabled(false);
             isValid = false;
         }else if (!contCharTam){
             txtCondSenha.setText(R.string.stringCondSenhaTam);
             txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
             txtConfSenha.setVisibility(View.GONE);
+            btnCadastrar.setEnabled(false);
             isValid = false;
         }
         getProgress = pb.getProgress();
