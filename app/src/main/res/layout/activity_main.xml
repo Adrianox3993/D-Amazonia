@@ -79,7 +79,7 @@
         android:layout_marginRight="17dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="klkkkkkkSua saúde merece atenção"
+        android:text="Sua saúde merece atenção"
         android:textColor="#213430"
         android:textSize="23dp" />
 
