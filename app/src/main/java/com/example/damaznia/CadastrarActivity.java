@@ -63,7 +63,7 @@ public class CadastrarActivity extends AppCompatActivity {
                 String pass = senha.getText().toString();
                 String pass2 = senha2.getText().toString();
                 validarSenhaRobusta(pass);
-                validarSenha(pass, pass2);
+                //validarSenha(pass, pass2);
             }
         });
 
