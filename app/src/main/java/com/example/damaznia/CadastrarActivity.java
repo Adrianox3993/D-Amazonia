@@ -67,8 +67,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
         if(pass1.length() <8 || pass2.length() < 8){
             Toast.makeText(CadastrarActivity.this, "Senha nao pode conter menos de 8 caracteres", Toast.LENGTH_SHORT).show();
-        }
-        else if (pass2.equals("") && pass1.equals("")){
+        } else if (pass2.equals("") && pass1.equals("")){
             //txtConfSenha.setBoxStrokeErrorColor(ColorStateList.valueOf(Color.GREEN));
             //Toast.makeText(CadastrarActivity.this, "teste de comparacao 1", Toast.LENGTH_LONG).show();
             Toast.makeText(CadastrarActivity.this, "Senha não pode TEAMO ser vazia", Toast.LENGTH_SHORT).show();
@@ -82,8 +81,6 @@ public class CadastrarActivity extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent = new Intent(getApplicationContext(), EntrarActivity.class);
@@ -93,9 +90,8 @@ public class CadastrarActivity extends AppCompatActivity {
 
     public boolean validarSenhaRobusta(String password)
     {
+        //teste de commmit
 
-        //TextView senha = (TextView) findViewById(R.id.cadSenha);
-        //String password = senha.getText().toString();
         boolean isValid = true;
         String upperCaseChars = "(.*[A-Z].*)";
         String lowerCaseChars = "(.*[a-z].*)";
@@ -104,37 +100,31 @@ public class CadastrarActivity extends AppCompatActivity {
 
         if (password.length() > 20 || password.length() < 8)
         {
-            // System.out.println("Password must be less than 20 and more than 8 characters in length.");
             Toast.makeText(CadastrarActivity.this, "A senha deve ter menos de 20 e mais de 8 caracteres de comprimento", Toast.LENGTH_LONG).show();
-            //senha2.setEnabled(false);
             senha2.setVisibility(View.GONE);
             isValid = false;
         }
         else if (!password.matches(upperCaseChars ))
         {
             Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um caractere maiúsculo", Toast.LENGTH_LONG).show();
-            //senha2.setEnabled(false);
             senha2.setVisibility(View.GONE);
             isValid = false;
         }
         else if (!password.matches(lowerCaseChars ))
         {
             Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um caractere minúsculo", Toast.LENGTH_LONG).show();
-            //senha2.setEnabled(false);
             senha2.setVisibility(View.GONE);
             isValid = false;
         }
         else if (!password.matches(numbers ))
         {
             Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um número", Toast.LENGTH_LONG).show();
-            //senha2.setEnabled(false);
             senha2.setVisibility(View.GONE);
             isValid = false;
         }
         else if (!password.matches(specialChars ))
         {
             Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um caractere especial entre @ # $%", Toast.LENGTH_LONG).show();
-            //senha2.setEnabled(false);
             senha2.setVisibility(View.GONE);
             isValid = false;
         }
