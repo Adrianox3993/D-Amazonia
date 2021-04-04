@@ -7,19 +7,19 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="407dp"
-        android:layout_height="441dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/textView2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:layout_marginBottom="16dp"
         app:srcCompat="@drawable/pg_inicial_icon01" />
 
@@ -68,7 +68,7 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="378dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
         android:layout_alignParentEnd="true"
@@ -79,7 +79,7 @@
         android:layout_marginRight="17dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Sua saúde merece atenção"
+        android:text="klkkkkkkSua saúde merece atenção"
         android:textColor="#213430"
         android:textSize="23dp" />
 
