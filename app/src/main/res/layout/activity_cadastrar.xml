@@ -10,13 +10,14 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_icon_login" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -24,6 +25,19 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="16dp"
+                android:progress="0"
+                app:layout_constraintBottom_toTopOf="@+id/idTxtSenha2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputEmail"
@@ -59,8 +73,8 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginEnd="18dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/idTxtSenha2"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/progressBar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:passwordToggleEnabled="true"
@@ -78,7 +92,7 @@
                     android:textColor="#213430"
                     android:textColorHint="#213430"
                     android:textSize="16dp" />
-                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTxtSenha2"
@@ -88,8 +102,10 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginEnd="18dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginBottom="45dp"
-                app:layout_constraintBottom_toTopOf="@+id/button5"
+                android:layout_marginBottom="8dp"
+                android:hint="Confirme sua senha"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/txtCondSenha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:passwordToggleEnabled="true"
@@ -101,18 +117,30 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_input"
                     android:fontFamily="@font/open_sans_bold"
-                    android:hint="Confirme sua senha"
                     android:inputType="textPassword"
                     android:padding="16dp"
                     android:textColor="#213430"
                     android:textColorHint="#213430"
-                    android:textSize="16dp"
-                    android:visibility="gone" />
+                    android:textSize="16dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/txtCondSenha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="45dp"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btnCadastrar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -120,12 +148,13 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="60dp"
-                android:background="@drawable/bg_botao"
+                android:background="@drawable/botao_estados"
+                android:enabled="false"
                 android:fontFamily="@font/open_sans_bold"
+                android:onClick="cadastrar"
                 android:text="Cadastrar"
-                android:onClick="validarCamposSenha"
                 android:textAllCaps="false"
-                android:textColor="#fff"
+                android:textColor="#213430"
                 android:textColorHint="#D8E5E3"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"

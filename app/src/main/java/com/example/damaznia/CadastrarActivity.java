@@ -1,28 +1,36 @@
 package com.example.damaznia;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Switch;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastrarActivity extends AppCompatActivity {
 
     TextInputEditText senha, senha2;
     TextInputLayout txtConfSenha;
+    TextView txtCondSenha;
+    Button btnCadastrar;
+    ProgressBar pb;
+    Integer aux=0, getProgress=0;
+    //Variaveis para validação e mudança de texto e cor da variavel txtCondSenha
+    Boolean contCharTam=false, contCharMa=false, contCharMi=false,
+            contCharNum=false, contCharS=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,9 @@ public class CadastrarActivity extends AppCompatActivity {
         senha = findViewById(R.id.idEditSenha);
         senha2 = findViewById(R.id.idEditSenha2);
         txtConfSenha = findViewById(R.id.idTxtSenha2);
+        txtCondSenha = findViewById(R.id.txtCondSenha);
+        btnCadastrar = findViewById(R.id.btnCadastrar);
+        pb = findViewById(R.id.progressBar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -43,96 +54,157 @@ public class CadastrarActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //String pass = senha.getText().toString();
-                //String pass2 = senha2.getText().toString();
-                //validarSenhaRobusta(pass);
-                //validarSenha(pass, pass2);
+
+            }
+
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void afterTextChanged(Editable s) {
+                String pass = senha.getText().toString();
+                    validarSenhaRobusta(pass);
+            }
+        });
+
+        senha2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 String pass = senha.getText().toString();
-                if (pass.length() >= 8)
-                validarSenhaRobusta(pass);
+                String pass2 = senha2.getText().toString();
+                validarSenha(pass, pass2);
             }
         });
-
     }
 
-    public void validarCamposSenha(View v) {
-        senha = findViewById(R.id.idEditSenha);
-        senha2 = findViewById(R.id.idEditSenha2);
-        String pass1 = senha.getText().toString();
-        String pass2 = senha2.getText().toString();
-
-        if(pass1.length() <8 || pass2.length() < 8){
-            Toast.makeText(CadastrarActivity.this, "Senha nao pode conter menos de 8 caracteres", Toast.LENGTH_SHORT).show();
-        } else if (pass2.equals("") && pass1.equals("")){
-            //txtConfSenha.setBoxStrokeErrorColor(ColorStateList.valueOf(Color.GREEN));
-            //Toast.makeText(CadastrarActivity.this, "teste de comparacao 1", Toast.LENGTH_LONG).show();
-            Toast.makeText(CadastrarActivity.this, "Outro teste de push", Toast.LENGTH_SHORT).show();
-        } else if (!pass1.equals(pass2)) {
-            //txtConfSenha.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED));
-            Toast.makeText(CadastrarActivity.this, "Senha não confere", Toast.LENGTH_SHORT).show();
-        } else{
-            Intent intent = new Intent(getApplicationContext(), EntrarActivity.class);
-            startActivityForResult(intent, 0);
+    //A função validarSenha habilita ou desabilita o Botão Cadastrar, dependendo se as senhas conferem
+    //ou não
+    public void validarSenha(String pass, String pass2) {
+        if (pass2.equals(pass)) {
+            txtConfSenha.setHintTextColor(ColorStateList.valueOf(Color.rgb(101, 201, 132)));
+            btnCadastrar.setEnabled(true);
+            btnCadastrar.setTextColor(Color.WHITE);
+        } else if (!pass2.equals(pass)) {
+            btnCadastrar.setEnabled(false);
+            txtConfSenha.setHintTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
         }
-
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = new Intent(getApplicationContext(), EntrarActivity.class);
-        startActivityForResult(intent, 0);
-        return true;
-    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public boolean validarSenhaRobusta(String password) {
 
-    public boolean validarSenhaRobusta(String password)
-    {
-        //teste de commmit
-
+        int tamanho = password.length();
+        int tamanhoAnt = tamanho;
         boolean isValid = true;
-        String upperCaseChars = "(.*[A-Z].*)";
-        String lowerCaseChars = "(.*[a-z].*)";
-        String numbers = "(.*[0-9].*)";
-        String specialChars = "(.*[@,#,$,%].*$)";
+        String upperCaseChars = getString(R.string.stringCasoChaMa);
+        String lowerCaseChars = getString(R.string.stringCasoCharMi);
+        String numbers = getString(R.string.stringCasoCharNum);
+        String special = getString(R.string.stringCasoCharS);
 
-        if (password.length() > 20 || password.length() < 8)
-        {
-            Toast.makeText(CadastrarActivity.this, "A senha deve ter menos de 20 e mais de 8 caracteres de comprimento", Toast.LENGTH_LONG).show();
-            senha2.setVisibility(View.GONE);
+        //Condição para incremento da barra de progresso caso o tamanho seja 9
+        //se  condição foi satisfeita e depois apagada, é decrementado.
+        //(simplifiquei a condição para ficar mais facil de implementar a barra de progresso, 
+        // futuramente volta a condição >8 <20)
+        if (tamanho==9 && tamanhoAnt>aux){
+            pb.incrementProgressBy(12);
+            contCharTam=true;
+        }else if (tamanho==8 && aux==9){
+            pb.incrementProgressBy(-12);
+            contCharTam=false;
+        }
+        //Condição --//-- caso o tenha uma letra maiúscula
+        //se  condição foi satisfeita e depois apagada, é decrementado.
+        if (password.matches(upperCaseChars) && !contCharMa) {
+            pb.incrementProgressBy(12);
+            contCharMa = true;
+        }else if (!password.matches(upperCaseChars) && contCharMa) {
+            pb.incrementProgressBy(-12);
+            contCharMa=false;
             isValid = false;
         }
-        else if (!password.matches(upperCaseChars ))
-        {
-            Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um caractere maiúsculo", Toast.LENGTH_LONG).show();
-            senha2.setVisibility(View.GONE);
+        //Condição --//-- --//-- uma letra minnúscula
+        //se  condição foi satisfeita e depois apagada, é decrementado.
+        if (password.matches(lowerCaseChars) && !contCharMi){
+            pb.incrementProgressBy(12);
+            contCharMi=true;
+        }else if (!password.matches(lowerCaseChars) && contCharMi) {
+            pb.incrementProgressBy(-12);
+            contCharMi=false;
             isValid = false;
         }
-        else if (!password.matches(lowerCaseChars ))
-        {
-            Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um caractere minúsculo", Toast.LENGTH_LONG).show();
-            senha2.setVisibility(View.GONE);
+        //Condição --//-- --//-- um número
+        //se  condição foi satisfeita e depois apagada, é decrementado.
+        if (password.matches(numbers) && !contCharNum){
+            pb.incrementProgressBy(12);
+            contCharNum=true;
+        }else if (!password.matches(numbers) && contCharNum) {
+            pb.incrementProgressBy(-12);
+            contCharNum=false;
             isValid = false;
         }
-        else if (!password.matches(numbers ))
-        {
-            Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um número", Toast.LENGTH_LONG).show();
-            senha2.setVisibility(View.GONE);
+        //Condição --//-- --//-- um char especial
+        //se  condição foi satisfeita e depois apagada, é decrementado.
+        if (password.matches(special) && !contCharS){
+            pb.incrementProgressBy(12);
+            contCharS=true;
+        }else if (!password.matches(special) && contCharS) {
+            pb.incrementProgressBy(-12);
+            contCharS=false;
             isValid = false;
         }
-        else if (!password.matches(specialChars ))
-        {
-            Toast.makeText(CadastrarActivity.this, "A senha deve ter pelo menos um caractere especial entre @ # $%", Toast.LENGTH_LONG).show();
-            senha2.setVisibility(View.GONE);
+        //Se as condições forem verdadeiras, o campo confirmar senha é habilitado
+        //senão, o texto da variavel txtCondSenha muda de acordo com a condição não satisfeita
+        if (contCharTam && contCharMa && contCharMi && contCharNum && contCharS){
+            txtCondSenha.setText(R.string.stringSenhaMForte);
+            txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(101, 201, 132)));
+            txtConfSenha.setVisibility(View.VISIBLE);
+        }else if (!contCharMa){
+            txtCondSenha.setText(R.string.stringCondSenhaMa);
+            txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
+            txtConfSenha.setVisibility(View.GONE);
+            isValid = false;
+        }else if (!contCharMi){
+            txtCondSenha.setText(R.string.stringCondSenhaMi);
+            txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
+            txtConfSenha.setVisibility(View.GONE);
+            isValid = false;
+        }else if (!contCharNum){
+            txtCondSenha.setText(R.string.stringCondSenhaNum);
+            txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
+            txtConfSenha.setVisibility(View.GONE);
+            isValid = false;
+        }else if (!contCharS){
+            txtCondSenha.setText(R.string.stringCondSenhaS);
+            txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
+            txtConfSenha.setVisibility(View.GONE);
+            isValid = false;
+        }else if (!contCharTam){
+            txtCondSenha.setText(R.string.stringCondSenhaTam);
+            txtCondSenha.setTextColor(ColorStateList.valueOf(Color.rgb(230,79,82)));
+            txtConfSenha.setVisibility(View.GONE);
             isValid = false;
         }
-        else{
-            Toast.makeText(CadastrarActivity.this, "Ok, Sua senha atende os requisitos", Toast.LENGTH_LONG).show();
-            senha2.setVisibility(View.VISIBLE);
+        getProgress = pb.getProgress();
+        if (getProgress<100/4)
+            pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(230,79,82)));
+        else if (getProgress>=100/4 && getProgress<=(100/4)*2)
+            pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(254,198,94)));
+        else if (getProgress>(100/4)*2) {
+            pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(101, 201, 132)));
         }
-
+        aux = tamanhoAnt;
         return isValid;
+    }
+    public void cadastrar(View view) {
+        Intent intent = new Intent(CadastrarActivity.this, EntrarActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
