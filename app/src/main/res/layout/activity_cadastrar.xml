@@ -20,11 +20,33 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnCadastrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/botao_estados"
+                android:enabled="false"
+                android:fontFamily="@font/open_sans_bold"
+                android:onClick="cadastrar"
+                android:text="Cadastrar"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -40,63 +62,23 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputEmail"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/idTxtSenha"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_input"
-                    android:fontFamily="@font/open_sans_bold"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:padding="16dp"
-                    android:textColor="#213430"
-                    android:textColorHint="#213430"
-                    android:textSize="16dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTxtSenha"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/txtCondSenha"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginRight="28dp"
+                android:layout_marginBottom="45dp"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:passwordToggleEnabled="true"
-                tools:ignore="MissingConstraints">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEditSenha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_input"
-                    android:fontFamily="@font/open_sans_bold"
-                    android:hint="Senha"
-                    android:inputType="textPassword"
-                    android:padding="16dp"
-                    android:textColor="#213430"
-                    android:textColorHint="#213430"
-                    android:textSize="16dp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTxtSenha2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
@@ -106,6 +88,10 @@
                 android:layout_marginBottom="8dp"
                 android:hint="Confirme sua senha"
                 android:visibility="gone"
+                app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusBottomStart="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusTopEnd="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusTopStart="@dimen/cornerRadiusInput"
                 app:layout_constraintBottom_toTopOf="@+id/txtCondSenha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -116,51 +102,71 @@
                     android:id="@+id/idEditSenha2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_input"
                     android:fontFamily="@font/open_sans_bold"
                     android:inputType="textPassword"
                     android:padding="16dp"
-                    android:textColor="#213430"
-                    android:textColorHint="#213430"
                     android:textSize="16dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/txtCondSenha"
-                android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="16dp"
+                app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusBottomStart="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusTopEnd="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusTopStart="@dimen/cornerRadiusInput"
+                app:layout_constraintBottom_toTopOf="@+id/idTxtSenha"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="16dp"
+                    android:textSize="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/idTxtSenha"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginEnd="18dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginBottom="45dp"
-                android:textSize="14dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+                android:layout_marginBottom="8dp"
+                app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusBottomStart="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusTopEnd="@dimen/cornerRadiusInput"
+                app:boxCornerRadiusTopStart="@dimen/cornerRadiusInput"
+                app:layout_constraintBottom_toTopOf="@+id/progressBar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:passwordToggleEnabled="true"
+                tools:ignore="MissingConstraints">
 
-            <Button
-                android:id="@+id/btnCadastrar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="60dp"
-                android:background="@drawable/botao_estados"
-                android:enabled="false"
-                android:fontFamily="@font/open_sans_bold"
-                android:onClick="cadastrar"
-                android:text="Cadastrar"
-                android:textAllCaps="false"
-                android:textColor="#213430"
-                android:textColorHint="#D8E5E3"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idEditSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:hint="Senha"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:textSize="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

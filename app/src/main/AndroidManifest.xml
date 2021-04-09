@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light">
+        android:theme="@style/Theme.DAmazônia">
         <activity android:name=".HomeActivity"></activity>
         <activity
             android:name=".CadastrarActivity"
@@ -18,13 +18,13 @@
             android:label="Entrar" />
         <activity
             android:name=".OnBoarding3Activity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.DAmazôniaNoActionBar"/>
         <activity
             android:name=".OnBoarding2Activity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.DAmazôniaNoActionBar"/>
         <activity
             android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.DAmazôniaNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.DAmazôniaNoActionBar"/>
 
         <meta-data
             android:name="preloaded_fonts"

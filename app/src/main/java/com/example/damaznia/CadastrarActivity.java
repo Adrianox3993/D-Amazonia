@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -200,11 +202,11 @@ public class CadastrarActivity extends AppCompatActivity {
             isValid = false;
         }
         getProgress = pb.getProgress();
-        if (getProgress<=100/3)
+        if (getProgress<100/3)
             pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(230,79,82)));
-        if (getProgress<(100/3)*2)
+        else if (getProgress>=100/3 && getProgress<=(100/3)*2)
             pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(254,198,94)));
-        else
+        else if (getProgress>(100/3)*2)
             pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(101, 201, 132)));
         aux = tamanhoAnt;
         return isValid;
@@ -213,5 +215,12 @@ public class CadastrarActivity extends AppCompatActivity {
         Intent intent = new Intent(CadastrarActivity.this, EntrarActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent(getApplicationContext(), EntrarActivity.class);
+        startActivityForResult(intent, 0);
+        return true;
     }
 }

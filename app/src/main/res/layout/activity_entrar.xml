@@ -28,6 +28,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtInputEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusInput"
+            app:boxCornerRadiusBottomStart="@dimen/cornerRadiusInput"
+            app:boxCornerRadiusTopEnd="@dimen/cornerRadiusInput"
+            app:boxCornerRadiusTopStart="@dimen/cornerRadiusInput"
+            app:boxStrokeColor="@color/green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -42,18 +48,21 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
                 android:fontFamily="@font/open_sans_bold"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:padding="16dp"
-                android:textColor="#213430"
-                android:textColorHint="#213430" />
+                android:padding="16dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/idTxtSenha"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusInput"
+            app:boxCornerRadiusBottomStart="@dimen/cornerRadiusInput"
+            app:boxCornerRadiusTopEnd="@dimen/cornerRadiusInput"
+            app:boxCornerRadiusTopStart="@dimen/cornerRadiusInput"
+            app:boxStrokeColor="@color/green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -70,14 +79,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input"
                 android:fontFamily="@font/open_sans_bold"
                 android:hint="Senha"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:padding="16dp"
-                android:textColor="#213430"
-                android:textColorHint="#213430"
                 android:textSize="17dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -101,21 +107,20 @@
             app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:rippleColor="#D8E5E3" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="36dp"
             android:fontFamily="@font/open_sans"
             android:text="Esqueceu sua senha?"
-            android:textColor="#213430"
+            android:textColor="@color/greenDark"
             android:textSize="14dp"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -131,12 +136,13 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="36dp"
-            android:fontFamily="@font/open_sans"
+            android:fontFamily="@font/open_sans_bold"
             android:gravity="center|center_horizontal|center_vertical"
             android:onClick="cadastrar"
             android:text="Não possui uma conta? Cadastre-se"
-            android:textColor="#213430"
-            android:textSize="14dp"
+            android:textAlignment="center"
+            android:textColor="@color/greenDark"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
