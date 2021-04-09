@@ -89,7 +89,7 @@ public class CadastrarActivity extends AppCompatActivity {
     //A função validarSenha habilita ou desabilita o Botão Cadastrar, dependendo se as senhas conferem
     //ou não
     public void validarSenha(String pass, String pass2) {
-        if (pass2.equals(pass)) {
+        if (pass2.equals(pass) && !pass2.isEmpty() && !pass.isEmpty()) {
             txtConfSenha.setHintTextColor(ColorStateList.valueOf(Color.rgb(101, 201, 132)));
             btnCadastrar.setEnabled(true);
             btnCadastrar.setTextColor(Color.WHITE);
@@ -115,49 +115,49 @@ public class CadastrarActivity extends AppCompatActivity {
         //(simplifiquei a condição para ficar mais facil de implementar a barra de progresso, 
         // futuramente volta a condição >8 <20)
         if (tamanho==9 && tamanhoAnt>aux){
-            pb.incrementProgressBy(12);
+            pb.incrementProgressBy(100/5);
             contCharTam=true;
         }else if (tamanho==8 && aux==9){
-            pb.incrementProgressBy(-12);
+            pb.incrementProgressBy(-100/5);
             contCharTam=false;
         }
         //Condição --//-- caso o tenha uma letra maiúscula
         //se  condição foi satisfeita e depois apagada, é decrementado.
         if (password.matches(upperCaseChars) && !contCharMa) {
-            pb.incrementProgressBy(12);
+            pb.incrementProgressBy(100/5);
             contCharMa = true;
         }else if (!password.matches(upperCaseChars) && contCharMa) {
-            pb.incrementProgressBy(-12);
+            pb.incrementProgressBy(-100/5);
             contCharMa=false;
             isValid = false;
         }
         //Condição --//-- --//-- uma letra minnúscula
         //se  condição foi satisfeita e depois apagada, é decrementado.
         if (password.matches(lowerCaseChars) && !contCharMi){
-            pb.incrementProgressBy(12);
+            pb.incrementProgressBy(100/5);
             contCharMi=true;
         }else if (!password.matches(lowerCaseChars) && contCharMi) {
-            pb.incrementProgressBy(-12);
+            pb.incrementProgressBy(-100/5);
             contCharMi=false;
             isValid = false;
         }
         //Condição --//-- --//-- um número
         //se  condição foi satisfeita e depois apagada, é decrementado.
         if (password.matches(numbers) && !contCharNum){
-            pb.incrementProgressBy(12);
+            pb.incrementProgressBy(100/5);
             contCharNum=true;
         }else if (!password.matches(numbers) && contCharNum) {
-            pb.incrementProgressBy(-12);
+            pb.incrementProgressBy(-100/5);
             contCharNum=false;
             isValid = false;
         }
         //Condição --//-- --//-- um char especial
         //se  condição foi satisfeita e depois apagada, é decrementado.
         if (password.matches(special) && !contCharS){
-            pb.incrementProgressBy(12);
+            pb.incrementProgressBy(100/5);
             contCharS=true;
         }else if (!password.matches(special) && contCharS) {
-            pb.incrementProgressBy(-12);
+            pb.incrementProgressBy(-100/5);
             contCharS=false;
             isValid = false;
         }
@@ -200,13 +200,12 @@ public class CadastrarActivity extends AppCompatActivity {
             isValid = false;
         }
         getProgress = pb.getProgress();
-        if (getProgress<100/4)
+        if (getProgress<=100/3)
             pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(230,79,82)));
-        else if (getProgress>=100/4 && getProgress<=(100/4)*2)
+        if (getProgress<(100/3)*2)
             pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(254,198,94)));
-        else if (getProgress>(100/4)*2) {
+        else
             pb.setProgressTintList(ColorStateList.valueOf(Color.rgb(101, 201, 132)));
-        }
         aux = tamanhoAnt;
         return isValid;
     }
