@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618213944169",
+    "project_id": "dia-e6c2a",
+    "storage_bucket": "dia-e6c2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618213944169:android:56859b0ef1a1ef4b196bf8",
+        "android_client_info": {
+          "package_name": "com.example.damaznia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618213944169-tvc9j3i1gh548pesa7e41j1ff1o9i0i2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKAzHpiLhcBYdsF7LqlQM4n_MSqO3G1N0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618213944169-tvc9j3i1gh548pesa7e41j1ff1o9i0i2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

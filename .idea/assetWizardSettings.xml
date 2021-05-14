@@ -317,7 +317,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../../Android/sdk/icons/material/materialicons/arrow_back/baseline_arrow_back_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/shopping_cart/baseline_shopping_cart_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -327,8 +327,9 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="autoMirrored" value="true" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="seta_esquerda_icon" />
+                            <entry key="outputName" value="ic_carrinho" />
                             <entry key="sourceFile" value="C:\Users\Camila Menezes\AndroidStudioProjects\DAmaznia" />
                           </map>
                         </option>

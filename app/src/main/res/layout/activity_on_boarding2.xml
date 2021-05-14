@@ -116,7 +116,7 @@
 
     <Button
         android:id="@+id/btnAnt"
-        android:layout_width="108dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"

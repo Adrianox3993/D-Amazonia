@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DAmazônia">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".RecuperarSenhaActivity"></activity>
+        <activity
+            android:name=".HomeActivity"/>
         <activity
             android:name=".CadastrarActivity"
             android:label="Cadastrar" />
@@ -18,10 +20,10 @@
             android:label="Entrar" />
         <activity
             android:name=".OnBoarding3Activity"
-            android:theme="@style/Theme.DAmazôniaNoActionBar"/>
+            android:theme="@style/Theme.DAmazôniaNoActionBar" />
         <activity
             android:name=".OnBoarding2Activity"
-            android:theme="@style/Theme.DAmazôniaNoActionBar"/>
+            android:theme="@style/Theme.DAmazôniaNoActionBar" />
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.DAmazôniaNoActionBar">
@@ -33,7 +35,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.DAmazôniaNoActionBar"/>
+            android:theme="@style/Theme.DAmazôniaNoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
