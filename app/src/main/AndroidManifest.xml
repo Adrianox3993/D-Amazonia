@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DAmazônia">
-        <activity android:name=".RecuperarSenhaActivity"></activity>
+        <activity android:name=".RecuperarSenhaActivity"
+            android:parentActivityName=".EntrarActivity"/>
         <activity
             android:name=".HomeActivity"/>
         <activity
@@ -19,13 +20,8 @@
             android:name=".EntrarActivity"
             android:label="Entrar" />
         <activity
-            android:name=".OnBoarding3Activity"
-            android:theme="@style/Theme.DAmazôniaNoActionBar" />
-        <activity
-            android:name=".OnBoarding2Activity"
-            android:theme="@style/Theme.DAmazôniaNoActionBar" />
-        <activity
             android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.DAmazôniaNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

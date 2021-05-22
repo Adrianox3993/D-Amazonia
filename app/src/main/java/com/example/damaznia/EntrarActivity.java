@@ -49,7 +49,7 @@ public class EntrarActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = new Intent(getApplicationContext(), OnBoarding3Activity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(intent, 0);
         return true;
     }
