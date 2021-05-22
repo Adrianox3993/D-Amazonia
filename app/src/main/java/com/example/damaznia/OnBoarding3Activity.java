@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
 public class OnBoarding3Activity extends AppCompatActivity {
+
+    private boolean isTouch = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +35,22 @@ public class OnBoarding3Activity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        int X = (int) event.getX();
+        int Y = (int) event.getY();
+        int eventaction = event.getAction();
+
+        switch (eventaction) {
+            case MotionEvent.ACTION_DOWN:
+                isTouch = true;
+                Intent intent = new Intent(OnBoarding3Activity.this,  EntrarActivity.class);
+                //Toast.makeText(this, "MOVE "+"X: "+X+" Y: "+Y, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+                break;
+        }
+        return true;
     }
 }
