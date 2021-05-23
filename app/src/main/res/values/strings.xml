@@ -21,4 +21,38 @@
     <string name="stringCasoCharS">(.*[@,#,$,%].*$)</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="title_activity_entrada6">entrada6</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_activity_entrada7">entrada7</string>
+    <string name="text" />
+    <string name="open_drawer">Abrir</string>
+    <string name="close_drawer">Fechar</string>
+    <string name="teste">TextView</string>
+    <string name="img">img</string>
+    <string name="usuario">Usuario</string>
+    <string name="adicione_produtos_no_seu_carrinho">Adicione produtos no seu carrinho!</string>
+    <string name="encerrar">encerrar</string>
+    <string name="totalDaCompra">totalDaCompra</string>
+
+    <string name="hint_search">search</string>
+    <string name="toodo">TODO</string>
+    <string name="main_title">Main Title</string>
+    <string name="sub_title">Sub Title</string>
+    <string name="ol_adriano">Olá, Adriano</string>
+    <string name="total">Total:</string>
+    <string name="_00_00">00.00</string>
+    <string name="todo">TODO</string>
+    <string name="seu_carrinho" />
 </resources>

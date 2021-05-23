@@ -46,7 +46,7 @@ public class OnBoarding3Activity extends AppCompatActivity {
         switch (eventaction) {
             case MotionEvent.ACTION_DOWN:
                 isTouch = true;
-                Intent intent = new Intent(OnBoarding3Activity.this,  EntrarActivity.class);
+                Intent intent = new Intent(OnBoarding3Activity.this,  menuSuspenso.class);
                 //Toast.makeText(this, "MOVE "+"X: "+X+" Y: "+Y, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
                 break;

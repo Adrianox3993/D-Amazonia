@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F0F0"
+    android:visibility="visible"
+    tools:context=".carrinho"
+    tools:visibility="visible"
+    android:orientation="vertical">
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/md_white_1000"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+
+
+      <TextView
+          android:id="@+id/textView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="30dp"
+          android:layout_marginLeft="30dp"
+          android:layout_marginTop="50dp"
+          android:fontFamily="@font/quicksand_medium"
+          android:text="@string/ol_adriano"
+          android:textColor="@color/colorPrimary"
+          android:textSize="24sp"
+          android:typeface="sans"
+          tools:ignore="MissingConstraints" />
+
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="30dp"
+          android:layout_marginLeft="30dp"
+          android:fontFamily="@font/quicksand_medium"
+          android:text="@string/seu_carrinho"
+          tools:ignore="MissingConstraints" />
+
+      <ImageButton
+          android:id="@+id/fecharVenda"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="50dp"
+          android:onClick="fecharVenda"
+          android:background="@color/design_default_color_background"
+          app:srcCompat="@drawable/carrinho" />
+
+      <TextView
+          android:id="@+id/textView4"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center|center_horizontal|center_vertical"
+          android:layout_marginTop="10dp"
+          android:fontFamily="@font/quicksand_medium"
+          android:gravity="center"
+          android:text="@string/total"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textColor="@color/colorPrimary"
+          android:textSize="18sp"
+          android:textStyle="bold"
+          android:typeface="normal" />
+
+      <TextView
+          android:id="@+id/encerrar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center|center_horizontal|center_vertical"
+          android:layout_marginTop="10dp"
+          android:fontFamily="@font/quicksand_medium"
+          android:gravity="center"
+          android:text="0.0"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textColor="@color/md_amber_300"
+          android:textSize="24sp"
+          android:textStyle="bold"
+          android:typeface="normal" />
+
+      <TextView
+          android:id="@+id/textView7"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom|center|center_horizontal|center_vertical"
+          android:layout_marginTop="10dp"
+          android:fontFamily="@font/quicksand_medium"
+          android:gravity="center"
+          android:text="@string/adicione_produtos_no_seu_carrinho"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textColor="@color/colorPrimary"
+          android:textSize="18sp"
+          android:textStyle="bold"
+          android:typeface="normal" />
+
+      <ImageButton
+          android:id="@+id/imageButton"
+          android:layout_width="130dp"
+          android:layout_height="130dp"
+          android:layout_gravity="center|center_vertical"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="20dp"
+          android:adjustViewBounds="false"
+          android:background="@color/design_default_color_on_primary"
+          app:srcCompat="@drawable/adicionaa"
+          android:onClick="adicionarCarrinho"
+          android:contentDescription="@string/todo" />
+
+
+    </LinearLayout>
+
+
+  </ScrollView>
+
+
+</LinearLayout>

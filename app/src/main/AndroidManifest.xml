@@ -33,6 +33,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".menuSuspenso" />
+        <activity android:name=".buscarProduto" />
+        <activity android:name=".adicionarProduto" />
+        <activity android:name=".carrinho" />
+        <activity android:name=".vendaEncerrada" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.DAmazôniaNoActionBar" />

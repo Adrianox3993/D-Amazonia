@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/nav_item_one"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Todos os produtos" />
+        <item android:id="@+id/nav_item_two"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Comprar Produtos" />
+    </group>
+
+    <group android:id="@+id/group_menu">
+        <item android:id="@+id/nav_item_four"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Óleos" />
+        <item android:id="@+id/nav_item_five"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Manteigas" />
+    </group>
+
+    <group android:id="@+id/group_menu2">
+        <item android:id="@+id/nav_item_six"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Temperos" />
+        <item android:id="@+id/nav_item_seven"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Cápsulas" />
+    </group>
+
+    <group android:id="@+id/group_menu4">
+        <item android:id="@+id/nav_item_eight"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Grão" />
+        <item android:id="@+id/nav_item_nine"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Cereais" />
+    </group>
+
+    <item android:title="Dados">
+        <menu>
+            <item android:id="@+id/nav_item_teen"
+                android:icon="@android:drawable/ic_menu_camera"
+                android:title="Seu Endereço" />
+            <item android:id="@+id/nav_item_eleven"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="seu e-mail" />
+        </menu>
+    </item>
+
+    <item android:title="Desenvolvedores">
+        <menu>
+            <item android:id="@+id/nav_item_thirteen"
+                android:icon="@android:drawable/ic_menu_camera"
+                android:title="Equipe" />
+        </menu>
+    </item>
+</menu>
