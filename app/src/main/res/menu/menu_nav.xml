@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group>
+    <group android:checkableBehavior="single">
         <item android:id="@+id/nav_item_one"
             android:icon="@android:drawable/ic_menu_add"
             android:title="Todos os produtos" />
@@ -9,7 +9,7 @@
             android:title="Comprar Produtos" />
     </group>
 
-    <group android:id="@+id/group_menu">
+    <group android:id="@+id/group_menu" android:checkableBehavior="single">
         <item android:id="@+id/nav_item_four"
             android:icon="@android:drawable/ic_menu_agenda"
             android:title="Óleos" />
@@ -18,7 +18,7 @@
             android:title="Manteigas" />
     </group>
 
-    <group android:id="@+id/group_menu2">
+    <group android:id="@+id/group_menu2" android:checkableBehavior="single">
         <item android:id="@+id/nav_item_six"
             android:icon="@android:drawable/ic_menu_agenda"
             android:title="Temperos" />
@@ -27,7 +27,7 @@
             android:title="Cápsulas" />
     </group>
 
-    <group android:id="@+id/group_menu4">
+    <group android:id="@+id/group_menu4" android:checkableBehavior="single">
         <item android:id="@+id/nav_item_eight"
             android:icon="@android:drawable/ic_menu_agenda"
             android:title="Grão" />
@@ -35,6 +35,15 @@
             android:icon="@android:drawable/ic_menu_agenda"
             android:title="Cereais" />
     </group>
+    <item android:title="Perfil">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="Sair"/>
+            </group>
+        </menu>
+    </item>
 
     <item android:title="Dados">
         <menu>

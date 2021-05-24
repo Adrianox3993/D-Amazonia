@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DAmazônia">
-        <activity android:name=".RecuperarSenhaActivity"
+        <activity
+            android:name=".RecuperarSenhaActivity"
             android:parentActivityName=".EntrarActivity"/>
         <activity
-            android:name=".HomeActivity"/>
+            android:name=".HomeActivity"
+            android:theme="@style/Theme.DAmazôniaNoActionBar"/>
         <activity
             android:name=".CadastrarActivity"
             android:label="Cadastrar" />
@@ -29,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menuSuspenso" />
         <activity android:name=".buscarProduto" />
         <activity android:name=".adicionarProduto" />
         <activity android:name=".carrinho" />

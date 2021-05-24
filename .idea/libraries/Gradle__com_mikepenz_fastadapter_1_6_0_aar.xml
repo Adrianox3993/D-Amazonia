@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54503fbbde4fb64a66670fbff874a80c/jetified-fastadapter-1.6.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54503fbbde4fb64a66670fbff874a80c/jetified-fastadapter-1.6.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54503fbbde4fb64a66670fbff874a80c/jetified-fastadapter-1.6.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/916b7504feb7aa2e27c5202cd3e784ae/jetified-fastadapter-1.6.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/916b7504feb7aa2e27c5202cd3e784ae/jetified-fastadapter-1.6.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/916b7504feb7aa2e27c5202cd3e784ae/jetified-fastadapter-1.6.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikepenz/fastadapter/1.6.0/e6f9f05db9af7c2bf26e8887f94cbeaa9a086e0c/fastadapter-1.6.0-javadoc.jar!/" />

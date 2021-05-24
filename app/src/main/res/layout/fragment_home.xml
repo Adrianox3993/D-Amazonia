@@ -33,23 +33,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/crimson_text_bold"
-                android:padding="8dp"
-                android:text="Olá,"
-                android:textColor="@color/green"
-                android:textSize="32sp" />
-
-            <TextView
                 android:id="@+id/txtNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/crimson_text"
                 android:padding="8dp"
-                android:textColor="@color/green"
-                android:textSize="32sp" />
+                android:textColor="@color/primary"
+                android:textSize="32sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

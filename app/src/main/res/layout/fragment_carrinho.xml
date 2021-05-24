@@ -32,10 +32,12 @@
             android:fontFamily="@font/crimson_text_bold"
             android:padding="8dp"
             android:text="Seus Produtos"
-            android:textColor="@color/green"
+            android:textColor="@color/primary"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

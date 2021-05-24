@@ -19,9 +19,6 @@
     <string name="stringCasoCharMi">(.*[a-z].*)</string>
     <string name="stringCasoCharNum">(.*[0-9].*)</string>
     <string name="stringCasoCharS">(.*[@,#,$,%].*$)</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
     <string name="title_activity_entrada6">entrada6</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

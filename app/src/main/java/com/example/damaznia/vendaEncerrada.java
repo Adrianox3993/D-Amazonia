@@ -15,7 +15,7 @@ public class vendaEncerrada extends AppCompatActivity {
     }
 
     public void home(View view) {
-        Intent intent = new Intent(vendaEncerrada.this,    menuSuspenso.class);
+        Intent intent = new Intent(vendaEncerrada.this,    HomeActivity.class);
         startActivity(intent);
     }
 }
